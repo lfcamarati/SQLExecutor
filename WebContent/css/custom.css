@@ -1,0 +1,59 @@
+@CHARSET "ISO-8859-1";
+
+.fullscreen {
+	position: fixed;
+	z-index: 500;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+.fullscreen textarea {
+	width: 99% !important;
+	height: 98% !important;
+}
+.fullscreen div.sqlResult {
+	width: 100% !important;
+	height: 100% !important;
+}
+.sqlCodeContainer {
+	margin-bottom: 10px;
+	border: 1px solid lightgray;
+}
+
+.ajaxModal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba( 255, 255, 255, .8 ) url('../img/modal-loading.gif') 50% 50% no-repeat;
+}
+
+.ajaxModal #cancel-link {
+	display: block;
+    left: 50%;
+    margin-left: -28px;
+    margin-top: 30px;
+    position: absolute;
+    top: 50%;
+}
+
+body.ajaxLoading {
+	overflow: hidden;   
+}
+
+body.ajaxLoading .ajaxModal {
+	display: block;
+}
+
+.CodeMirror {
+	font-family: monospace !important;
+	height: 210px !important;
+}
+
+.CodeMirror-fullscreen {
+	height: auto !important;
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+
+	<display-name>SQLExecutor</display-name>
+
+	<servlet>
+		<description></description>
+		<display-name>SqlExecuteServlet</display-name>
+		<servlet-name>SqlExecuteServlet</servlet-name>
+		<servlet-class>sql.executor.servlet.SqlExecuteServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SqlExecuteServlet</servlet-name>
+		<url-pattern>/execute</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description></description>
+		<display-name>LastQueriesServlet</display-name>
+		<servlet-name>LastQueriesServlet</servlet-name>
+		<servlet-class>sql.executor.servlet.LastQueriesServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LastQueriesServlet</servlet-name>
+		<url-pattern>/lastQueriesServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<description></description>
+		<display-name>IndexServlet</display-name>
+		<servlet-name>IndexServlet</servlet-name>
+		<servlet-class>sql.executor.servlet.IndexServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>IndexServlet</servlet-name>
+		<url-pattern>/index</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<display-name>ParserServlet</display-name>
+		<servlet-name>ParserServlet</servlet-name>
+		<servlet-class>json.java.servlet.ParserServlet</servlet-class>
+		<init-param>
+			<param-name>scanPackages</param-name>
+			<param-value>
+				sql.executor.controller
+			</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ParserServlet</servlet-name>
+		<url-pattern>/parser/*</url-pattern>
+	</servlet-mapping>
+	
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<include-prelude>/WEB-INF/jspf/imports.jspf</include-prelude>
+			<trim-directive-whitespaces>true</trim-directive-whitespaces>
+		</jsp-property-group>
+	</jsp-config>
+	
+	<session-config>
+		<session-timeout>-1</session-timeout>
+	</session-config>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
