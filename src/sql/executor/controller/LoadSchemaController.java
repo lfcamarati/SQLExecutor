@@ -57,6 +57,8 @@ public class LoadSchemaController {
 					item.getColumns().add(columnName);
 				}
 				
+				columns.close();
+				
 				metaDados.add(item);
 			}
 			
